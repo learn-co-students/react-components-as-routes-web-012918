@@ -138,12 +138,15 @@ const Signup = () =>
     <input type="submit" value="Sign Up" />
   </form>
 
+const fakeMessages = ["test 1", "test 2", "test 3", "hello"]
+
 const Messages = () =>
   <ul>
-    <li>test 1</li>
-    <li>test 2</li>
-    <li>test 3</li>
+    {fakeMessages.map( message => Message(message))}
   </ul>
+
+const Message = (str) =>
+  <li>{str}</li>
 
 ReactDOM.render((
   <Router>
