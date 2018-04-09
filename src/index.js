@@ -88,6 +88,22 @@ const Navbar = () =>
         background: 'darkblue'
       }}
     >Login</NavLink>
+    <NavLink
+      to="/signup"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Sign Up</NavLink>
+    <NavLink
+      to="/messages"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Messages</NavLink>
   </div>;
 
 const Home = () => <h1>Home!</h1>;
@@ -108,6 +124,27 @@ const Login = () =>
     <input type="submit" value="Login" />
   </form>;
 
+const Signup = () =>
+  <form>
+    <h1>Sign Up</h1>
+    <div>
+      <input type="text" name="username" placeholder="Username" />
+      <label htmlFor="username">Username</label>
+    </div>
+    <div>
+      <input type="password" name="password" placeholder="Password" />
+      <label htmlFor="password">Password</label>
+    </div>
+    <input type="submit" value="Sign Up" />
+  </form>
+
+const Messages = () =>
+  <ul>
+    <li>test 1</li>
+    <li>test 2</li>
+    <li>test 3</li>
+  </ul>
+
 ReactDOM.render((
   <Router>
     <div>
@@ -115,6 +152,8 @@ ReactDOM.render((
       <Route exact path="/" component={Home} />
       <Route exact path="/about" component={About} />
       <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/messages" component={Messages} />
     </div>
   </Router>),
   document.getElementById('root')
